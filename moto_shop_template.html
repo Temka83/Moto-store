@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МотоМаркет</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-black text-white">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🏍️ МотоМаркет</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-yellow-400">Головна</a>
+        <a href="#categories" class="hover:text-yellow-400">Категорії</a>
+        <a href="#contact" class="hover:text-yellow-400">Контакти</a>
+        <a href="#cart" class="hover:text-yellow-400">Кошик 🛒</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden px-4 pb-4 md:hidden">
+      <a href="#" class="block py-1">Головна</a>
+      <a href="#categories" class="block py-1">Категорії</a>
+      <a href="#contact" class="block py-1">Контакти</a>
+      <a href="#cart" class="block py-1">Кошик</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-yellow-400 py-16 text-center px-4">
+    <h2 class="text-4xl font-bold mb-4">Все для байкерів в одному місці</h2>
+    <p class="text-lg">Екіпіровка, шоломи, запчастини – надійно та швидко</p>
+    <a href="#categories" class="mt-6 inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">Переглянути товари</a>
+  </section>
+
+  <!-- Пошук та фільтр -->
+  <section class="container mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <input type="text" placeholder="Пошук товарів..." class="w-full md:w-1/2 px-4 py-2 border rounded" />
+      <select class="w-full md:w-1/4 px-4 py-2 border rounded">
+        <option value="all">Всі категорії</option>
+        <option value="gear">Екіпіровка</option>
+        <option value="helmets">Шоломи</option>
+        <option value="parts">Запчастини</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Категорії -->
+  <section id="categories" class="py-12 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">Категорії товарів</h3>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Card приклад -->
+      <div class="bg-white shadow rounded-lg p-4">
+        <img src="https://via.placeholder.com/300" alt="Product" class="w-full h-48 object-cover rounded mb-4" />
+        <h4 class="text-xl font-semibold mb-1">Мотокуртка</h4>
+        <p class="text-gray-600 mb-2">Надійна захисна куртка</p>
+        <p class="text-lg font-bold mb-2">2 500 ₴</p>
+        <a href="#product" class="text-sm text-yellow-500 hover:underline">Детальніше</a>
+        <button class="block mt-2 w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">Додати в кошик</button>
+      </div>
+      <!-- Повторити карточки для різних товарів -->
+    </div>
+  </section>
+
+  <!-- Сторінка продукту -->
+  <section id="product" class="py-12 container mx-auto px-4">
+    <h3 class="text-2xl font-bold mb-4">Мотокуртка</h3>
+    <div class="flex flex-col md:flex-row gap-6">
+      <img src="https://via.placeholder.com/400" alt="Product" class="w-full md:w-1/2 rounded shadow" />
+      <div class="md:w-1/2">
+        <p class="text-gray-700 mb-2">Опис: Стильна мотокуртка зі шкіри, підходить для будь-якого сезону.</p>
+        <p class="text-lg font-bold mb-4">Ціна: 2 500 ₴</p>
+        <button class="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600">Додати в кошик</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кошик -->
+  <section id="cart" class="py-12 container mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-6">Ваш кошик</h3>
+    <div class="bg-white p-6 shadow rounded">
+      <p>Мотокуртка - 1 шт. - 2 500 ₴</p>
+      <hr class="my-2" />
+      <p class="text-xl font-semibold">Разом: 2 500 ₴</p>
+      <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Оформити замовлення</button>
+    </div>
+  </section>
+
+  <!-- Контактна форма -->
+  <section id="contact" class="bg-white py-12">
+    <div class="container mx-auto px-4 max-w-xl">
+      <h3 class="text-3xl font-bold text-center mb-6">Зв'язатися з нами</h3>
+      <form class="space-y-4">
+        <input type="text" placeholder="Ваше ім’я" class="w-full border px-4 py-2 rounded" />
+        <input type="email" placeholder="Email" class="w-full border px-4 py-2 rounded" />
+        <textarea placeholder="Повідомлення" rows="4" class="w-full border px-4 py-2 rounded"></textarea>
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded">Надіслати</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center">
+    <p>&copy; 2025 МотоМаркет. Всі права захищено.</p>
+  </footer>
+
+  <!-- Script: Mobile menu toggle -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
